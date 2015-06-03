@@ -5,34 +5,26 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dgeorgiev</groupId>
-    <artifactId>servicer</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <artifactId>servicer_core</artifactId>
+    
+    
+    <parent>
+        <artifactId>servicer_parent</artifactId>
+        <groupId>com.dgeorgiev</groupId>
+        <version>0.1-SNAPSHOT</version>
+        <relativePath>../servicer_parent/pom.xml</relativePath>
+    </parent>
 
-    <properties>
-        <scalaVersion>2.11.6</scalaVersion>
-            </properties>
 
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
         <testSourceDirectory>src/test/scala</testSourceDirectory>
 
         <plugins>
-
-
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>3.2.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
-
 
         </plugins>
     </build>
@@ -42,7 +34,6 @@
     <dependency>
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-library</artifactId>
-        <version>${scalaVersion}</version>
     </dependency>
     </dependencies>
 
