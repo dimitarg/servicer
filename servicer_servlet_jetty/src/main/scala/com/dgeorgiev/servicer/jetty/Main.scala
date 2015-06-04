@@ -27,9 +27,9 @@ object Main extends App {
 
 
   val server = new Server(Configuration.serverPort)
-  val servetHandler = new ServletHandler()
-  server.setHandler(servetHandler)
-  servetHandler.addServletWithMapping(classOf[ServicerDispatcher], "/*")
+  val servletHandler = new ServletHandler()
+  server.setHandler(servletHandler)
+  servletHandler.addServletWithMapping(classOf[ServicerDispatcher], "/*")
 
   server.start()
   server.join()

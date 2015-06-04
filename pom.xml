@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>../servicer_core</module>
-        <module>../servicer_servlet_jetty</module>
+        <module>servicer_core</module>
+        <module>servicer_servlet_jetty</module>
         </modules>
 
     <properties>
