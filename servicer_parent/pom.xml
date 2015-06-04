@@ -11,10 +11,12 @@
 
     <modules>
         <module>../servicer_core</module>
+        <module>../servicer_servlet_jetty</module>
         </modules>
 
     <properties>
         <scalaVersion>2.11.6</scalaVersion>
+        <jettyVersion>9.2.11.v20150529</jettyVersion>
     </properties>
 
     <dependencyManagement>
@@ -24,6 +26,27 @@
                 <artifactId>scala-library</artifactId>
                 <version>${scalaVersion}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.typesafe</groupId>
+                <artifactId>config</artifactId>
+                <version>1.2.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlet</artifactId>
+                <version>${jettyVersion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+
+
+
         </dependencies>
     </dependencyManagement>
 
