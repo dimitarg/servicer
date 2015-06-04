@@ -33,6 +33,7 @@ class ServicerDispatcher extends HttpServlet {
 
 }
 
+
 object ServletRegistry {
   var registry: Registry[HttpServletRequest] = new Registry[HttpServletRequest](Map())
 }
