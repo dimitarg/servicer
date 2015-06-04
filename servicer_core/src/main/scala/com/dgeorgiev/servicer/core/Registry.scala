@@ -6,8 +6,6 @@ package com.dgeorgiev.servicer.core
  */
 class Registry[A](val map: Map[String,Entry[A]]) {
 
-
-
   def addMapping[B,C,Err,Az](path: String, validate: A=>Either[Err,B], service: B=> Either[Err,C]) : Registry[A] = {
     new Registry[A](map + (path-> SynchEntry(validate,service)))
   }

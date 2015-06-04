@@ -12,7 +12,8 @@
     <modules>
         <module>servicer_core</module>
         <module>servicer_servlet_jetty</module>
-        </modules>
+        <module>servicer_examples</module>
+    </modules>
 
     <properties>
         <scalaVersion>2.11.6</scalaVersion>

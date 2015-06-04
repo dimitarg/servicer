@@ -1,4 +1,4 @@
-package com.dgeorgiev.servicer.jetty.config
+package com.dgeorgiev.servicer.config
 
 import com.typesafe.config.ConfigFactory
 

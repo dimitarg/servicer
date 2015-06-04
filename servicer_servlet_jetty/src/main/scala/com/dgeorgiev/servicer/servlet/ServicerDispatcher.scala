@@ -1,8 +1,8 @@
-package com.dgeorgiev.servicer.jetty
+package com.dgeorgiev.servicer.servlet
 
-import javax.servlet.http.{HttpServletResponse, HttpServletRequest, HttpServlet}
+import javax.servlet.http.{HttpServlet, HttpServletRequest, HttpServletResponse}
 
-import com.dgeorgiev.servicer.core.{SynchEntry, Entry, Registry}
+import com.dgeorgiev.servicer.core.{Entry, Registry, SynchEntry}
 
 /**
  * Created by fmap on 03.06.15.
@@ -28,8 +28,6 @@ class ServicerDispatcher extends HttpServlet {
 
 
   }
-
-
 
 }
 

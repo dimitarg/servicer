@@ -1,12 +1,14 @@
-package com.dgeorgiev.servicer.jetty
+package com.dgeorgiev.servicer.examples
 
 import javax.servlet.http.HttpServletRequest
 
-import com.dgeorgiev.servicer.jetty.config.Configuration
-import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.servlet.ServletHandler
+import com.dgeorgiev.servicer.servlet.ServletRegistry
+import com.dgeorgiev.servicer.servlet.jetty.Bootstrap
 
-object Main extends App {
+/**
+ * Created by fmap on 04.06.15.
+ */
+object Jetty extends App {
 
   object myService {
     val parse: HttpServletRequest=>Either[String,Int] = req => {
@@ -25,13 +27,7 @@ object Main extends App {
 
   ServletRegistry.registry = ServletRegistry.registry.addMapping("/foo", myService.parse, myService.calc)
 
-
-  val server = new Server(Configuration.serverPort)
-  val servletHandler = new ServletHandler()
-  server.setHandler(servletHandler)
-  servletHandler.addServletWithMapping(classOf[ServicerDispatcher], "/*")
-
-  server.start()
-  server.join()
-
+  val bootstrap = new Bootstrap()
+  bootstrap.start()
+  bootstrap.join()
 }
