@@ -16,6 +16,10 @@ class Registry[A](val map: Map[String,Entry[A]]) {
 
 }
 
+object Registry {
+  def apply[A]() : Registry[A] = new Registry[A](Map())
+}
+
 sealed trait Entry[A]
 
 abstract case class SynchEntry[IN]() extends Entry[IN] {

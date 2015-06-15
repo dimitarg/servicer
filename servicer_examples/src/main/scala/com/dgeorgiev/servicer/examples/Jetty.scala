@@ -2,7 +2,7 @@ package com.dgeorgiev.servicer.examples
 
 import javax.servlet.http.HttpServletRequest
 
-import com.dgeorgiev.servicer.servlet.ServletRegistry
+import com.dgeorgiev.servicer.core.Registry
 import com.dgeorgiev.servicer.servlet.jetty.Bootstrap
 
 /**
@@ -25,9 +25,9 @@ object Jetty extends App {
     }
   }
 
-  ServletRegistry.registry = ServletRegistry.registry.addMapping("/foo", myService.parse, myService.calc)
-
-  val bootstrap = new Bootstrap()
+  val bootstrap = new Bootstrap(9090, Registry().addMapping("/foo", myService.parse, myService.calc))
   bootstrap.start()
   bootstrap.join()
+
+
 }
